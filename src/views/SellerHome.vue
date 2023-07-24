@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       products: [],
-      customerId: store.state.userId,
+      userId: store.state.userId,
     };
   },
   created() {
@@ -32,10 +32,9 @@ export default {
   methods: {
     async GetProducts() {
       await this.axios
-        .get(`http://localhost:8070/api/1.0/get-product/${this.customerId}`)
+        .get(`http://localhost:8070/api/1.0/get-product/${this.userId}`)
         .then((result) => {
           if (result.status === 200) {
-            console.log(result.data);
             this.products = result.data;
           }
         })
