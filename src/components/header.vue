@@ -30,7 +30,7 @@
       <v-list density="compact" nav>
       <v-list-item to='/aldinaldin/customer-home/home-page' prepend-icon="mdi-home" title="Anasayfa"  ></v-list-item>
       <v-list-item to='/aldinaldin/customer-home/sepet' prepend-icon="mdi-basket" title="Sepet"></v-list-item>
-        <v-list-item prepend-icon="mdi-reorder-horizontal" title="Siparişler" ></v-list-item>
+      <v-list-item to='/aldinaldin/customer-home/order' prepend-icon="mdi-reorder-horizontal" title="Siparişler" ></v-list-item>
         <v-list-item prepend-icon="mdi-account" title="Profil"></v-list-item>
       </v-list>
     </v-navigation-drawer>
