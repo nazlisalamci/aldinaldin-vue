@@ -11,10 +11,14 @@
     <v-divider></v-divider>
     <v-card-text> Price : {{ product.price }}TL </v-card-text>
     <v-divider></v-divider>
-    <v-card-actions >
+    <v-card-actions v-if="role == 2" >
       <v-spacer></v-spacer>
       <v-btn @click="DeleteProduct(product.id)">Delete</v-btn>
       <v-btn @click="GetThisProduct(product)">Update</v-btn>
+    </v-card-actions>
+    <v-card-actions v-else-if="role == 1" >
+      <v-spacer></v-spacer>
+      <v-btn @click="AddToBasket(product)">Add</v-btn>
     </v-card-actions>
   </v-card>
 
@@ -57,6 +61,7 @@ export default {
   data() {
     return {
       role: store.state.RoleId,
+      userId:store.state.userId,
       dialog: false,
       imgFile:null,
       updateProduct: {
@@ -120,6 +125,20 @@ export default {
           console.error(err.message);
         });
     },
+    async AddToBasket(product) {
+      await this.axios
+        .post(`http://localhost:8070/api/1.0/add-to-basket/${this.userId}`,{
+          Product:product
+        })
+        .then((result) => {
+          if (result.status === 200) {
+          }
+        })
+        .catch((err) => {
+          console.error(err.message);
+        });
+    },
+
   },
 };
 </script>

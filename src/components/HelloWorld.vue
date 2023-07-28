@@ -21,8 +21,8 @@ import store from '@/store';
 export default {
   data: (vm) => ({
     userModel: {
-      mail: "customerSeller@gmail.com",
-      password: "sellerPassword"
+      mail: "customerUser@gmail.com",
+      password: "customerPassword"
     }
   }),
   watch: {
@@ -45,7 +45,7 @@ export default {
               this.$store.dispatch('updateRoleId', res.data.role.id);
 
               if (res.data.role.id == 1) {
-                self.$router.push({ name: "CustomerHome", params: { customer_id: res.data.id } })
+                self.$router.push({ path:"aldinaldin/customer-home/home-page" })
               }
               else {
                 self.$router.push({ path:"aldinaldin/seller-home/home-page" })
