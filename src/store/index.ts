@@ -25,13 +25,12 @@ const store = createStore({
   actions: {
     updateUserId(context, value) {
       context.commit("UPDATE_USER_ID", value);
-      localStorage.setItem("userId", value); // LocalStorage'a userId'yi kaydedin
+      localStorage.setItem("userId", value); 
     },
     updateRoleId(context, value) {
       context.commit("UPDATE_ROLE_ID", value);
-      localStorage.setItem("roleId", value); // LocalStorage'a roleId'yi kaydedin
+      localStorage.setItem("roleId", value); 
     },
-    // LocalStorage'dan verileri alarak state'i güncelleyen bir eylem
     initializeStore(context) {
       const userId = localStorage.getItem("userId");
       const roleId = localStorage.getItem("roleId");
@@ -44,11 +43,10 @@ const store = createStore({
     },
   },
   getters: {
-    // Getters'larınızı burada tanımlayın
   },
 });
 
-// Sayfa yeniden yüklendiğinde LocalStorage'dan verileri alarak store'u güncelleyin
+// Sayfa yeniden yüklendiğinde LocalStorage'dan verileri alarak store'u günceller
 store.dispatch('initializeStore');
 
 export default store;
