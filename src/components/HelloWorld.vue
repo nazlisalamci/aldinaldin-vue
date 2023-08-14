@@ -21,8 +21,8 @@ import store from '@/store';
 export default {
   data: (vm) => ({
     userModel: {
-      mail: "customerUser@gmail.com",
-      password: "customerPassword"
+      mail: "customerSeller@gmail.com",
+      password: "sellerPassword"
     }
   }),
   watch: {
